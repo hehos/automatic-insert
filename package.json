@@ -1,0 +1,69 @@
+{
+	"name": "automatic-insert",
+	"displayName": "automatic-insert",
+	"description": "automatic-insert",
+	"version": "0.0.1",
+  "publisher": "hehos",
+	"engines": {
+		"vscode": "^1.54.0"
+	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hehos/automatic-insert.git"
+  },
+	"categories": [
+		"Other"
+	],
+  "keywords": [
+    "increment",
+    "incrementor",
+    "random"
+  ],
+	"activationEvents": [
+    "onCommand:extension.incrementSelection",
+    "onCommand:extension.randomSelection"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+      {
+        "command": "extension.incrementSelection",
+        "title": "Increment Selection"
+      },
+      {
+        "command": "extension.randomSelection",
+        "title": "Increment Selection"
+      }
+		],
+    "keybindings": [
+      {
+        "command": "extension.incrementSelection",
+        "key": "ctrl+alt+i",
+        "mac": "cmd+alt+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.randomSelection",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorTextFocus"
+      }
+    ]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.54.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+}
